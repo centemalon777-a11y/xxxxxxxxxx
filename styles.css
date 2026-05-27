@@ -1,0 +1,81 @@
+/* Zenova CBT — styles.css */
+:root{
+  --bg:#f8fafc;
+  --navy-900:#031233; /* deep navy */
+  --navy-700:#072146;
+  --accent-start:#08306b;
+  --accent-end:#0b3a8b;
+  --glass: rgba(255,255,255,0.06);
+  --card-bg: rgba(255,255,255,0.7);
+  --muted:#7b8aa3;
+  --glass-border: rgba(255,255,255,0.12);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,var(--bg),#ffffff 60%);
+  color:var(--navy-900);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow:hidden;
+  animation:pageFade 700ms ease both;
+}
+
+/* Background floating shapes */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+.shape{position:absolute;border-radius:50%;filter:blur(28px);opacity:0.85;transform:translate3d(0,0,0);mix-blend-mode:screen}
+.s1{width:420px;height:420px;left:-8%;top:-6%;background:radial-gradient(circle at 30% 30%,#06223f,#05294f 40%,transparent 70%);animation:float 8s ease-in-out infinite}
+.s2{width:300px;height:300px;right:-6%;top:-12%;background:linear-gradient(135deg,#0b3a8b,#06223f);opacity:0.55;animation:float 10s ease-in-out infinite}
+.s3{width:220px;height:220px;left:10%;bottom:-6%;background:radial-gradient(circle,#0f4aa8,#092b4a);opacity:0.38;animation:float 9s ease-in-out infinite}
+.s4{width:140px;height:140px;right:16%;bottom:6%;background:linear-gradient(90deg,#072146,#08306b);opacity:0.24;animation:float 12s ease-in-out infinite}
+
+@keyframes float{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(8deg)}100%{transform:translateY(0) rotate(0deg)}}
+
+/* Layout */
+.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:36px;position:relative;z-index:2}
+.card{
+  width:420px;max-width:92vw;padding:34px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,255,255,0.75));
+  box-shadow:0 10px 30px rgba(3,18,51,0.12), inset 0 1px 0 rgba(255,255,255,0.6);
+  backdrop-filter:blur(8px) saturate(120%);
+  border:1px solid var(--glass-border);
+  transition:transform 320ms cubic-bezier(.2,.9,.3,1),box-shadow 320ms ease;
+  text-align:center;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(3,18,51,0.18)}
+
+.logo{width:86px;height:86px;object-fit:contain;margin:0 auto 12px;display:block}
+.title{font-size:18px;margin:6px 0 4px;font-weight:700;letter-spacing:0.6px;color:var(--navy-900)}
+.subtitle{font-size:13px;margin:0 0 18px;color:var(--muted)}
+
+.form{display:flex;flex-direction:column;gap:12px}
+.field{position:relative}
+input[type=text]{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(6,34,63,0.08);outline:none;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(250,250,255,0.8));
+  font-size:15px;color:var(--navy-900);transition:box-shadow 220ms ease,transform 220ms ease,border-color 220ms ease}
+input[type=text]::placeholder{color:#9aa7bd}
+input[type=text]:focus{box-shadow:0 6px 22px rgba(11,58,139,0.18);border-color:var(--accent-end);transform:translateY(-2px)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:0;color:#fff;font-weight:700;cursor:pointer;font-size:15px;
+  background:linear-gradient(90deg,var(--accent-start),var(--accent-end));box-shadow:0 8px 26px rgba(11,58,139,0.25);transition:transform 180ms ease,box-shadow 180ms ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(11,58,139,0.34)}
+.btn:active{transform:translateY(-1px)}
+
+.actions{display:flex;justify-content:center;margin-top:6px}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* animations */
+@keyframes pageFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:520px){
+  .card{padding:22px;border-radius:14px}
+  .logo{width:72px;height:72px}
+  .title{font-size:16px}
+  input[type=text]{padding:12px}
+}
+
+/* Small accessible focus ring for keyboard users */
+input[type=text]:focus-visible{outline:3px solid rgba(11,58,139,0.12);outline-offset:3px}

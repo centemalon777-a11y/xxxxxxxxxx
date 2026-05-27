@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZENOVA MEGA CBT COMPETITION — Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Floating background shapes -->
+  <div class="bg" aria-hidden="true">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+  </div>
+
+  <!-- Main card -->
+  <main class="wrap">
+    <section class="card" id="entryCard">
+      <!-- Logo -->
+      <img src="1.png" alt="Zenova Logo" class="logo"/>
+
+      <h1 class="title">ZENOVA MEGA CBT COMPETITION</h1>
+      <p class="subtitle">Enter your details to begin the examination</p>
+
+      <form id="entryForm" class="form" onsubmit="return false;">
+        <!-- Full Name -->
+        <div class="field">
+          <label for="fullname" class="sr-only">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Full Name" autocomplete="name" required />
+        </div>
+
+        <!-- Exam Code -->
+        <div class="field">
+          <label for="examcode" class="sr-only">Exam Code</label>
+          <input type="text" id="examcode" name="examcode" placeholder="Exam Code" autocomplete="off" required />
+        </div>
+
+        <div class="actions">
+          <button id="beginBtn" class="btn">Begin Exam</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ZENOVA MEGA CBT COMPETITION 2027 — Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <!-- Top navigation -->
+    <header class="nav" id="mainNav">
+      <div class="nav-inner">
+        <div class="brand">
+          <img src="1.png" alt="Zenova logo" class="nav-logo">
+          <div class="brand-block">
+            <div class="brand-text">ZENOVA CBT</div>
+            <div class="brand-sub">MEGA CBT COMPETITION 2027</div>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <div class="candidate-card">
+            <div class="cand-meta"><span class="label">Candidate</span><strong id="candName">Guest</strong></div>
+            <div class="cand-meta"><span class="label">Reg</span><span id="candId">- - -</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Ambient background shapes -->
+    <div class="bg" aria-hidden="true">
+      <div class="shape s1"></div>
+      <div class="shape s2"></div>
+      <div class="shape s3"></div>
+      <div class="shape s4"></div>
+    </div>
+
+    <main class="container">
+      <!-- Dashboard grid -->
+      <div class="grid">
+        <!-- Left column: hero + subjects -->
+        <div class="col col-left">
+          <section class="hero card elevation-lg">
+            <div class="hero-content">
+              <h1 class="hero-title">ZENOVA MEGA CBT COMPETITION 2027</h1>
+              <p class="hero-sub">Prepare for JAMB 2027 with a realistic CBT experience that builds speed, confidence and accuracy.</p>
+
+              <div class="hero-actions">
+                <button id="heroStart" class="btn primary large">Start Examination</button>
+                <button id="readInstr" class="btn ghost large">Read Instructions</button>
+              </div>
+            </div>
+            <div class="hero-panel">
+              <div class="stat"><div class="k">Exam Type</div><div class="v">JAMB 2027 CBT Simulation</div></div>
+              <div class="stat"><div class="k">Duration</div><div class="v">2 Hours</div></div>
+              <div class="stat"><div class="k">Questions</div><div class="v">180</div></div>
+              <div class="stat"><div class="k">Status</div><div class="v status ready">Ready</div></div>
+            </div>
+          </section>
+
+          <section class="subjects card elevation" id="subjectsSection">
+            <div class="subs-head">
+              <h2>Select Your Subjects</h2>
+              <div class="progress">Subjects Selected: <strong id="selCount">1</strong>/4</div>
+            </div>
+
+            <div class="subs-grid" id="subjectsGrid">
+              <div class="subject-card locked" data-subject="English"><div class="icon">📘</div><div class="name">English Language</div><div class="tag">Compulsory</div></div>
+              <div class="subject-card" data-subject="Mathematics"><div class="icon">🧮</div><div class="name">Mathematics</div></div>
+              <div class="subject-card" data-subject="Physics"><div class="icon">🔭</div><div class="name">Physics</div></div>
+              <div class="subject-card" data-subject="Chemistry"><div class="icon">⚗️</div><div class="name">Chemistry</div></div>
+              <div class="subject-card" data-subject="Biology"><div class="icon">🧬</div><div class="name">Biology</div></div>
+            </div>
+
+            <div class="progress-bar-wrap">
+              <div class="progress-bar">
+                <div class="bar" id="subjectsBar" style="width:25%"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right column: instructions + summary -->
+        <div class="col col-right">
+          <section class="instructions card elevation">
+            <h3>Important Instructions</h3>
+            <ol>
+              <li>This examination is designed to prepare students for JAMB 2027.</li>
+              <li>The total duration is 2 hours. Timer starts when you begin.</li>
+              <li>English Language is compulsory and preselected.</li>
+              <li>Select only 3 additional subjects (total 4 including English).</li>
+              <li>Do not refresh your browser during the examination.</li>
+              <li>Ensure you have a stable internet connection.</li>
+              <li>Each question carries equal marks.</li>
+              <li>Malpractice leads to disqualification.</li>
+            </ol>
+          </section>
+
+          <section class="summary card elevation-lg" id="summary">
+            <h3>Exam Summary</h3>
+            <div class="summary-grid">
+              <div><strong>Exam Type</strong><div class="muted">JAMB 2027 CBT Simulation</div></div>
+              <div><strong>Duration</strong><div class="muted">2 Hours</div></div>
+              <div><strong>Questions</strong><div class="muted">180</div></div>
+              <div><strong>Required</strong><div class="muted">English + 3 subjects</div></div>
+            </div>
+
+            <div class="agree-area">
+              <label class="agree"><input type="checkbox" id="agreeChk"> I agree to the examination rules and regulations</label>
+              <button id="startExam" class="btn launch" disabled>🚀 Start Exam</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">Powered by Zenova Study © 2027</footer>
+
+    <script src="home.js"></script>
+  </body>
+</html>
